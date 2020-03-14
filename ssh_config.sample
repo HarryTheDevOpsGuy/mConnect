@@ -1,0 +1,47 @@
+### default for all ##
+Host *
+     ForwardAgent no
+     ForwardX11 no
+     ForwardX11Trusted yes
+     # User ubuntu
+     # Port 22
+     Protocol 2
+     ServerAliveInterval 60
+     ServerAliveCountMax 30
+
+## override as per host ##
+Host zluatjump
+    HostName 13.127.29.220
+    User ubuntu
+    Port 2525
+    IdentityFile /home/hari/inventory/keys/zl-gd.pem
+
+Host zlprdjump
+    HostName 13.234.202.242
+    User ubuntu
+    Port 2525
+    IdentityFile /home/hari/inventory/keys/zl-gp.pem
+
+Host zlprodjump
+    HostName 13.127.25.235
+    User ubuntu
+    Port 22
+    IdentityFile /home/hari/inventory/keys/Zl-Prd-Jump.pem
+
+
+Host 172.31.6.* , 172.31.18.* , 172.31.16.* , 172.31.21.* , 172.31.30.* , 172.31.31.*
+     User ubuntu
+     Port 22
+     ProxyCommand ssh -q -W %h:%p zlprdjump
+
+Host 172.31.19.* , 172.31.20.* , 172.31.27.*
+     User ubuntu
+     Port 22
+     ProxyCommand ssh -q -W %h:%p zluatjump
+
+
+Host 172.16.*
+     User ubuntu
+     Port 22
+     ProxyCommand ssh -q -W %h:%p zlprodjump
+     #IdentityFile /home/hari/inventory/keys/yourkey.pem
