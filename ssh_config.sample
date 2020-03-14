@@ -19,7 +19,7 @@ Host bastion
 Host 172.16.*
      User ubuntu
      Port 22
-     ProxyCommand ssh -q -W %h:%p bastion
+     ProxyCommand ssh -F /ssh/config/Path/ssh_config -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -q -W %h:%p bastion
      #IdentityFile /home/hari/inventory/keys/yourkey.pem
      
 
