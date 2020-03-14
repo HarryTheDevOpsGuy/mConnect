@@ -10,38 +10,19 @@ Host *
      ServerAliveCountMax 30
 
 ## override as per host ##
-Host zluatjump
-    HostName 13.127.29.220
-    User ubuntu
-    Port 2525
-    IdentityFile /home/hari/inventory/keys/zl-gd.pem
-
-Host zlprdjump
-    HostName 13.234.202.242
-    User ubuntu
-    Port 2525
-    IdentityFile /home/hari/inventory/keys/zl-gp.pem
-
-Host zlprodjump
-    HostName 13.127.25.235
+Host bastion
+    HostName 15.4.5.5
     User ubuntu
     Port 22
-    IdentityFile /home/hari/inventory/keys/Zl-Prd-Jump.pem
-
-
-Host 172.31.6.* , 172.31.18.* , 172.31.16.* , 172.31.21.* , 172.31.30.* , 172.31.31.*
-     User ubuntu
-     Port 22
-     ProxyCommand ssh -q -W %h:%p zlprdjump
-
-Host 172.31.19.* , 172.31.20.* , 172.31.27.*
-     User ubuntu
-     Port 22
-     ProxyCommand ssh -q -W %h:%p zluatjump
-
+    IdentityFile /home/hari/inventory/keys/jumppemkeyfile.pem
 
 Host 172.16.*
      User ubuntu
      Port 22
-     ProxyCommand ssh -q -W %h:%p zlprodjump
+     ProxyCommand ssh -q -W %h:%p bastion
      #IdentityFile /home/hari/inventory/keys/yourkey.pem
+     
+
+
+### Hey This is just sample file for example.
+### if you are unable to configure properly. you may reach me for any support. 
