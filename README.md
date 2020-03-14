@@ -1,6 +1,6 @@
 #### Welcome  [ mConnect - a Powerful SSH Session Manager ]
 
-**mConnect** : v0.0.4
+**mConnect** : v0.0.5
 
 ##### Getting Start
 
@@ -25,14 +25,22 @@ There is `inventory/hosts` or `~/inventory/hosts` file in project repository. yo
 
 ```bash
 #vim /opt/mconnect/inventory/hosts
-
-
-
+## This is Variable file you can update this file accordingly.
+MAIL_TO="HarryTheDevOpsGuy@gmail.com"
+declare -A HOSTS=(
+  # Development Env
+  ["ABC-DEV"]="ubuntu@172.31.1.12:secret_pass"
+  ["ABC-QA"]="ubuntu@172.31.2.99:keyname.pem"
+  ["ABC-Stage-New"]="harry@172.1.19.4:private_key"
+  # You can add comments like below
+  # ["ABC-TEST"]="ubuntu@172.31.22.12:ur_pass_here"
+)
 ```
-
-
 
 
 ---
 Thanks
-Hari
+Hari </br>
+Profile : [Hire me - harrythedevopsguy.github.io  ][677a6d8b]
+
+  [677a6d8b]: https://harrythedevopsguy.github.io/ "Visit my profile page."
