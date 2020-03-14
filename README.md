@@ -1,6 +1,6 @@
 #### Welcome  [ mConnect - a Powerful SSH Session Manager ]
 
-**mConnect** : v0.0.5
+**mConnect** : v0.0.6
 
 ##### Getting Start
 
@@ -11,6 +11,7 @@
 Just download this repository and follow below steps.
 
 ```bash
+sudo apt-get install -y sshpass
 sudo git clone https://github.com/HarryTheDevOpsGuy/mConnect.git /opt/mconnect
 sudo chown -R ${USER}:${USER} /opt/mconnect
 sudo chmod a+x /opt/mconnect/mConnect
@@ -36,6 +37,9 @@ declare -A HOSTS=(
   # ["ABC-TEST"]="ubuntu@172.31.22.12:ur_pass_here"
 )
 ```
+
+#### Where do i store ssh private_keys or pem keys?
+All Private keys should be stored in `~/inventory/keys` directory. and key name should be updated in `~/inventory/hosts` (without key path) file accordingly.
 
 
 ---
