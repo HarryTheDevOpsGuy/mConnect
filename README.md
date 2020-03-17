@@ -1,6 +1,6 @@
 #### Welcome  [ mConnect - a Powerful SSH Session Manager ]
 
-**mConnect** : v0.0.6
+**mConnect** : v0.0.7
 
 ##### Getting Start
 
